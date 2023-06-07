@@ -1,0 +1,6 @@
+@import './mixin.scss';
+$titleFont:50px;
+
+@include screen(576px){
+    $titleFont:20px; 
+}

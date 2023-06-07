@@ -1,0 +1,219 @@
+.L-booking-block {
+    width: 39%;
+    background-color: white;
+    text-align: center;
+    font-family: Inter, serif;
+    margin: 0 auto;
+
+
+    .L-booking-top {
+        width: 100%;
+        display: flex;
+        padding: 16px 20px;
+        border-bottom: 1px solid rgba(235, 231, 231, 0.738);
+        top: 0;
+        position: sticky;
+        z-index: 99;
+        background-color: #fff;
+
+
+        .L-booking-title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 24px;
+            font-family: Inter, serif;
+            margin: 0 auto;
+            display: flex;
+
+            .L-booking-icon-down {
+                font-size: 25px;
+            }
+        }
+
+        .L-user-icon {
+            font-size: 20px;
+        }
+    }
+
+    .L-calendar-block {
+        width: 90%;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin: 0 auto;
+
+
+        /* Custom styles for the calendar */
+        .react-calendar {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: Inter, serif;
+        }
+
+        .react-calendar__navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .react-calendar__navigation button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .react-calendar__navigation button:enabled:hover,
+        .react-calendar__navigation button:enabled:focus {
+            padding: 5px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+        }
+
+        .react-calendar__navigation .react-calendar__navigation__label {
+            font-size: 18px;
+            font-weight: bold;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 16px;
+            cursor: default;
+        }
+
+        .react-calendar__month-view__weekdays {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .react-calendar__month-view__weekdays__weekday {
+            flex: 1;
+            text-align: center;
+        }
+
+        .react-calendar__month-view__weekdays__weekday abbr {
+            text-decoration: none;
+            color: #ccc;
+            font-weight: 400;
+        }
+
+        .react-calendar__month-view__days {
+            display: inline-block;
+            // grid-template-columns: repeat(7, 1fr);
+            // gap: 2px;
+            overflow-x: scroll;
+            white-space: nowrap;
+        }
+
+        .react-calendar__tile {
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            overflow-x: scroll;
+            white-space: nowrap;
+        }
+
+        .react-calendar__tile--now.react-calendar__tile--active,
+        .react-calendar__tile--active {
+            background-color: black;
+            border-radius: 50%;
+        }
+
+        .react-calendar__tile--rangeStart,
+        .react-calendar__tile--rangeEnd {
+            background-color: #000814;
+        }
+
+        .react-calendar__tile--rangeStart:enabled:hover,
+        .react-calendar__tile--rangeEnd:enabled:hover,
+        .react-calendar__tile--rangeStart:enabled:focus,
+        .react-calendar__tile--rangeEnd:enabled:focus {
+            background-color: #000814;
+        }
+
+        .react-calendar__tile--active,
+        .react-calendar__tile--active:hover,
+        .react-calendar__tile--active:focus {
+            background-color: #000814;
+        }
+
+        .react-calendar__tile--now {
+            background-color: transparent;
+        }
+
+        .react-calendar__tile--now:hover,
+        .react-calendar__tile--now:focus {
+            background-color: #777;
+        }
+    }
+
+    .L-hours-booking{
+        height: 600px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+    .L-hour-section {
+        width: 95%;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 16px 20px;
+
+        .L-booking-daytime{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 24px;
+            font-family: Inter, serif;
+            margin: 0 auto;
+        }
+
+        .L-hour-buttons {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 10px;
+            // border-top: 1px solid #ccc;
+
+
+            .L-hour-button {
+                flex: 1;
+                width: 106px;
+                // min-width: 85px;
+                padding: 10px 30px;
+                border: none;
+                border-radius: 20px;
+                border: 1px solid #ccc;
+                background-color: transparent;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin: 5px;
+            }
+
+            .L-hour-button.selected {
+                background-color: #000814;
+                color: #fff;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+    .L-booking-button {
+        width: 95%;
+        margin: 20px auto;
+        border-radius: 20px;
+        padding: 16px 20px;
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        background-color: #000814;
+        color: #fff;
+    }
+}

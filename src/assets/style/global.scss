@@ -1,0 +1,26 @@
+@import './mixin.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.G-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 60px;
+
+    @include screen(991px) {
+        padding: 0 15px;
+    }
+}
+
+// .slick-arrow {
+//     position: absolute !important;
+//     top: 50% !important;
+//     left: 50% !important;
+//     z-index: 333 !important;
+//     background-color: red !important;
+// }
