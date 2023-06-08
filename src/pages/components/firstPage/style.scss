@@ -1,9 +1,24 @@
+@import '../../../assets/style/mixin.scss';
+
+
 .L-booking-block {
     width: 39%;
     background-color: white;
     text-align: center;
     font-family: Inter, serif;
     margin: 0 auto;
+
+    @include screen(990px) {
+        width: 60%;
+    }
+
+    @include screen(700px) {
+        width: 80%;
+    }
+
+    @include screen(400px) {
+        width: 95%;
+    }
 
 
     .L-booking-top {
@@ -150,57 +165,57 @@
         }
     }
 
-    .L-hours-booking{
+    .L-hours-booking {
         height: 600px;
         overflow-y: scroll;
         overflow-x: hidden;
 
-    .L-hour-section {
-        width: 95%;
-        margin: 20px auto;
-        border: 1px solid #ccc;
-        border-radius: 20px;
-        padding: 16px 20px;
+        .L-hour-section {
+            width: 95%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 16px 20px;
 
-        .L-booking-daytime{
-            font-style: normal;
-            font-weight: 500;
-            font-size: 17px;
-            line-height: 24px;
-            font-family: Inter, serif;
-            margin: 0 auto;
-        }
-
-        .L-hour-buttons {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 10px;
-            // border-top: 1px solid #ccc;
-
-
-            .L-hour-button {
-                flex: 1;
-                width: 106px;
-                // min-width: 85px;
-                padding: 10px 30px;
-                border: none;
-                border-radius: 20px;
-                border: 1px solid #ccc;
-                background-color: transparent;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-                margin: 5px;
+            .L-booking-daytime {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 24px;
+                font-family: Inter, serif;
+                margin: 0 auto;
             }
 
-            .L-hour-button.selected {
-                background-color: #000814;
-                color: #fff;
-                border-radius: 20px;
+            .L-hour-buttons {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 10px;
+                // border-top: 1px solid #ccc;
+
+
+                .L-hour-button {
+                    flex: 1;
+                    width: 106px;
+                    // min-width: 85px;
+                    padding: 10px 30px;
+                    border: none;
+                    border-radius: 20px;
+                    border: 1px solid #ccc;
+                    background-color: transparent;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    margin: 5px;
+                }
+
+                .L-hour-button.selected {
+                    background-color: #000814;
+                    color: #fff;
+                    border-radius: 20px;
+                }
             }
         }
     }
-}
 
     .L-booking-button {
         width: 95%;
@@ -215,5 +230,8 @@
         transition: background-color 0.3s ease;
         background-color: #000814;
         color: #fff;
+        bottom: 0;
+        position: sticky;
+        z-index: 101;
     }
 }

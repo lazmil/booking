@@ -1,9 +1,22 @@
+@import '../../../assets/style/mixin.scss';
+
 .L-services-block {
     width: 39%;
     text-align: center;
     font-family: Inter, serif;
     margin: 0 auto;
 
+    @include screen(990px) {
+        width: 60%;
+    }
+
+    @include screen(700px) {
+        width: 80%;
+    }
+
+    @include screen(400px) {
+        width: 95%;
+    }
 
     .L-services-top {
         width: 100%;
@@ -12,13 +25,6 @@
         position: sticky;
         z-index: 98;
         background-color: #fff;
-        
-
-        .L-back-icon {
-            font-size: 25px;
-            margin-right: 180px;
-            cursor: pointer;
-        }
 
 
         .L-services-title {
@@ -30,6 +36,22 @@
             font-family: Inter, serif;
             margin: 0 auto;
             display: flex;
+
+            .L-back-icon {
+                width: 30px;
+                font-size: 25px;
+                cursor: pointer;
+            }
+
+            .L-services-name {
+                width: 70%;
+                margin: 0 auto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 24px;
+                font-family: Inter, serif;
+            }
         }
 
         .L-services-options {
@@ -38,7 +60,7 @@
             justify-content: flex-start;
             background-color: #fff;
             margin: 10px 0;
-    
+
             .L-service-button {
                 margin: 10px;
                 border-radius: 20px;
@@ -51,19 +73,19 @@
                 cursor: pointer;
                 background-color: #777;
                 color: #000814;
-              }
-              
-              .L-service-button.active {
+            }
+
+            .L-service-button.active {
                 background-color: #000814;
                 color: white;
-              }
-              
-              .L-service-button .L-atag {
+            }
+
+            .L-service-button .L-atag {
                 text-decoration: none;
                 color: #fff;
                 transition: background-color 0.3s ease;
-              }
-              
+            }
+
         }
     }
 
@@ -81,7 +103,7 @@
             line-height: 28px;
         }
 
-        .L-newhall-btns{
+        .L-newhall-btns {
             width: 100%;
             height: 300px;
             background-color: red;
@@ -135,10 +157,11 @@
         display: flex;
         align-items: center;
 
-        .L-selected-continue{
+        .L-selected-continue {
             margin: 0 auto;
         }
-        .L-selected-count{
+
+        .L-selected-count {
             width: 20px;
             height: 20px;
             background-color: #fff;

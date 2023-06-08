@@ -60,7 +60,7 @@ const Services = () => {
       <div className='L-services-top'>
         <h1 className='L-services-title'>
           <MdKeyboardArrowLeft className='L-back-icon' onClick={toPrev} />
-          Выбрать услуги
+          <h3 className='L-services-name'>Выбрать услуги</h3>
         </h1>
         <div className='L-services-options'>
           <button

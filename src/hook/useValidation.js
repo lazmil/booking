@@ -36,7 +36,7 @@ export default function () {
     } else if (regexVal4.test(val) && type == 'tel') {
       seterrorPhoneNumber('')
     }
- 
+
   }
 
   return {

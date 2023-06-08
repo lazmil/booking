@@ -1,8 +1,22 @@
+@import '../../../assets/style/mixin.scss';
+
 .L-conformation-block {
     width: 39%;
     text-align: center;
     font-family: Inter, serif;
     margin: 0 auto;
+
+    @include screen(990px) {
+        width: 60%;
+    }
+
+    @include screen(700px) {
+        width: 80%;
+    }
+
+    @include screen(400px) {
+        width: 95%;
+    }
 
 
     .L-conformation-top {
@@ -13,13 +27,6 @@
         z-index: 98;
         background-color: #fff;
 
-        .L-back-icon {
-            font-size: 25px;
-            margin-right: 220px;
-            cursor: pointer;
-        }
-
-
         .L-conformation-title {
             width: 100%;
             font-style: normal;
@@ -29,6 +36,22 @@
             font-family: Inter, serif;
             margin: 0 auto;
             display: flex;
+
+            .L-back-icon {
+                width: 30px;
+                font-size: 25px;
+                cursor: pointer;
+            }
+
+            .L-conformation-name {
+                width: 70%;
+                margin: 0 auto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 24px;
+                font-family: Inter, serif;
+            }
         }
     }
 
@@ -57,17 +80,16 @@
             width: 100%;
         }
 
-        .L-conformation-conformation{
+        .L-conformation-conformation {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
 
-            .L-conformation-text{
+            .L-conformation-text {
                 font-size: 11px;
             }
         }
-
     }
 
     .L-conformation-inputs {
@@ -80,10 +102,10 @@
             font-weight: 500;
             font-size: 13px;
             line-height: 16px;
-            font-family: Inter,serif;
+            font-family: Inter, serif;
             display: block;
 
-            .L-conformation-p{
+            .L-conformation-p {
                 margin: 5px 0;
                 color: #777;
             }
@@ -98,11 +120,12 @@
             border: 2px solid #f5f5f5;
         }
 
-        .L-conformation-item{
+        .L-conformation-item {
             color: red;
             margin: 5px 0 20px 0;
         }
     }
+
     .L-conformation-button {
         width: 95%;
         margin: 20px auto;
@@ -122,8 +145,8 @@
         display: flex;
         align-items: center;
 
-        .L-conformation-continue{
+        .L-conformation-continue {
             margin: 0 auto;
         }
-}
+    }
 }

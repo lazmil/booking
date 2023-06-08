@@ -6,7 +6,7 @@ import ResponsiveView from "./responsiveView";
 function App() {
   return (
     <>
-<ResponsiveView mobileView={<MobileView />} webView={<WebView />} />
+      <ResponsiveView mobileView={<MobileView />} webView={<WebView />} />
     </>
   );
 }

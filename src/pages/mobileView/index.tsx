@@ -1,9 +1,10 @@
+import Router from '../router';
 import './style.scss';
 
-const MobileView = () =>{
+const MobileView = () => {
     return (
         <div className='L-mobileView-block'>
-mob
+            <Router />
         </div>
     )
 }

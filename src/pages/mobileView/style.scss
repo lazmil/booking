@@ -1,5 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.L-mobileView-block {
+    max-width: 990px;
+    width: 100%;
+    margin: 0 auto;
+    // padding: 0 60px;
+    background-color: #f5f5f5;
+    // display: flex;
+    justify-content: center;
 }

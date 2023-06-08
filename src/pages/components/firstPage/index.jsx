@@ -12,20 +12,20 @@ const BookingForm = () => {
   const [bookingDate, setBookingDate] = useState(new Date());
   const [selectedHour, setSelectedHour] = useState('');
   const [currentDate, setCurrentDate] = useState(new Date());
-//   const [selectedHour, setSelectedHour] = useState('10:00 AM');
+  //   const [selectedHour, setSelectedHour] = useState('10:00 AM');
 
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const toPage = () =>{
-  navigate("/services")
-}
+  const toPage = () => {
+    navigate("/services")
+  }
 
   const handleBookingDateChange = (date) => {
     setBookingDate(date);
     setCurrentDate(new Date());
   };
-  
+
 
   const handleHourChange = (hour) => {
     setSelectedHour(hour);
@@ -76,64 +76,63 @@ const toPage = () =>{
 
         <div className='L-hours-booking'>
 
-        <div className='L-hour-section'>
-  <h2 className='L-booking-daytime'>УТРО</h2>
-  <div className='L-hour-buttons'>
-    {morningHours.map((hour) => (
-      <button
-        key={hour.value}
-        type='button'
-        className={`L-hour-button ${
-            selectedHour === hour.value ? 'selected' : ''
-                }`}
-        onClick={() => handleHourChange(hour.value)}
-      >
-        {hour.label}
-      </button>
-    ))}
-  </div>
-</div>
-
-
-        <div className='L-hour-section'>
-          <h2 className='L-booking-daytime'>ДЕНЬ</h2>
-          <div className='L-hour-buttons'>
-            {daytimeHours.map((hour) => (
-              <button
-                key={hour.value}
-                type='button'
-                className={`L-hour-button ${selectedHour === hour.value ? 'selected' : ''}`}
-                onClick={() => handleHourChange(hour.value)}
-              >
-                {hour.label}
-              </button>
-            ))}
+          <div className='L-hour-section'>
+            <h2 className='L-booking-daytime'>УТРО</h2>
+            <div className='L-hour-buttons'>
+              {morningHours.map((hour) => (
+                <button
+                  key={hour.value}
+                  type='button'
+                  className={`L-hour-button ${selectedHour === hour.value ? 'selected' : ''
+                    }`}
+                  onClick={() => handleHourChange(hour.value)}
+                >
+                  {hour.label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className='L-hour-section'>
-          <h2 className='L-booking-daytime'>ВЕЧЕР</h2>
-          <div className='L-hour-buttons'>
-            {eveningHours.map((hour) => (
-              <button
-                key={hour.value}
-                type='button'
-                className={`L-hour-button ${selectedHour === hour.value ? 'selected' : ''}`}
-                onClick={() => handleHourChange(hour.value)}
-              >
-                {hour.label}
-              </button>
-            ))}
+
+          <div className='L-hour-section'>
+            <h2 className='L-booking-daytime'>ДЕНЬ</h2>
+            <div className='L-hour-buttons'>
+              {daytimeHours.map((hour) => (
+                <button
+                  key={hour.value}
+                  type='button'
+                  className={`L-hour-button ${selectedHour === hour.value ? 'selected' : ''}`}
+                  onClick={() => handleHourChange(hour.value)}
+                >
+                  {hour.label}
+                </button>
+              ))}
+            </div>
           </div>
+
+          <div className='L-hour-section'>
+            <h2 className='L-booking-daytime'>ВЕЧЕР</h2>
+            <div className='L-hour-buttons'>
+              {eveningHours.map((hour) => (
+                <button
+                  key={hour.value}
+                  type='button'
+                  className={`L-hour-button ${selectedHour === hour.value ? 'selected' : ''}`}
+                  onClick={() => handleHourChange(hour.value)}
+                >
+                  {hour.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {selectedHour && bookingDate && (
+            <button type='submit' className='L-booking-button' onClick={toPage}>
+              ПРОДОЛЖИТЬ
+            </button>
+          )}
+
         </div>
-
-        {selectedHour && bookingDate && (
-  <button type='submit' className='L-booking-button' onClick={toPage}>
-    ПРОДОЛЖИТЬ
-  </button>
-)}
-
-</div>
 
       </form>
     </div>
