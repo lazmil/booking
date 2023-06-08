@@ -3,72 +3,86 @@ import './style.scss';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import useValidation from '../../../hook/useValidation';
 import { useNavigate } from 'react-router-dom';
-
-
+import { useLocation } from 'react-router-dom';
+import { servicesData } from './utils';
 
 const Conformation = () => {
+  const location = useLocation();
+  const selectedOptions: { name: string; price: string }[] = location.state?.selectedOptions || [];
+  const [checkboxChecked, setCheckboxChecked] = useState(false);
+  const [formValid, setFormValid] = useState(false);
 
-    const [checkboxChecked, setCheckboxChecked] = useState(false);
-    const [formValid, setFormValid] = useState(false);
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const toPrev = () => {
+    navigate('/services');
+  };
 
-      const toPrev = () => {
-        navigate("/services")
-      }
+  const [inp, setInp] = useState('');
+  const [inp2, setInp2] = useState('');
+  const [inp3, setInp3] = useState('');
+  const [type1, setType1] = useState('email');
+  const [type2, setType2] = useState('text');
+  const [type3, setType3] = useState('tel');
+  const { item } = useValidation();
+  const [nameClicked, setNameClicked] = useState(false);
+  const [numberClicked, setNumberClicked] = useState(false);
+  const [emailClicked, setEmailClicked] = useState(false);
 
-    const [inp, setInp] = useState('')
-    const [inp2, setInp2] = useState('')
-    const [inp3, setInp3] = useState('')
-    const [type1, setType1] = useState('email')
-    const [type2, setType2] = useState('text')
-    const [type3, setType3] = useState('tel')
-    const { item } = useValidation()
-    const [nameClicked, setNameClicked] = useState(false);
-    const [numberClicked, setNumberClicked] = useState(false);
-    const [emailClicked, setEmailClicked] = useState(false);
+  useEffect(() => {
+    const isFormValid =
+      item.name === '' &&
+      item.phoneNumber === '' &&
+      item.email === '' &&
+      checkboxChecked;
+    setFormValid(isFormValid);
+  }, [item.name, item.phoneNumber, item.email, checkboxChecked]);
 
-    useEffect(() => {
-        const isFormValid =
-            item.name === '' && item.phoneNumber === '' && item.email === '' && checkboxChecked;
-        setFormValid(isFormValid);
-    }, [item.name, item.phoneNumber, item.email, checkboxChecked]);
+  useEffect(() => {
+    item.func(inp, type1);
+  }, [inp, type1]);
 
+  useEffect(() => {
+    item.func(inp2, type2);
+  }, [inp2, type2]);
 
-    useEffect(() => {
-        item.func(inp, type1);
-    }, [inp, type1]);
+  useEffect(() => {
+    item.func(inp3, type3);
+  }, [inp3, type3]);
 
-    useEffect(() => {
-        item.func(inp2, type2);
-    }, [inp2, type2]);
+  const totalPrice = selectedOptions.reduce((sum, option) => {
+    const optionPrice = option.price ? parseInt(option.price.replace(/\s/g, '')) : 0;
+    return sum + optionPrice;
+  }, 0);
 
-    useEffect(() => {
-        item.func(inp3, type3);
-    }, [inp3, type3]);
+  const filteredOptions = servicesData.filter((option) =>
+    selectedOptions.some((selectedOption) => selectedOption.name === option.name)
+  );
 
+  return (
+    <div className='L-conformation-block'>
+      <div className='L-conformation-top'>
+        <h1 className='L-conformation-title'>
+          <MdKeyboardArrowLeft className='L-back-icon' onClick={toPrev} />
+          Запись
+        </h1>
+      </div>
 
-    return (
-        <div className='L-conformation-block'>
-            <div className='L-conformation-top'>
-                <h1 className='L-conformation-title'>
-                    <MdKeyboardArrowLeft className='L-back-icon' onClick={toPrev}/>
-                    Запись
-                </h1>
+      <div className='L-conformation-details'>
+        <h3 className='L-conformation-details-record'>Детали записи</h3>
+        <div className='L-conformation-records'>
+          {filteredOptions.map((option, index) => (
+            <div key={index}>
+              <h3 className='L-conformation-details-record'>{option.name}</h3>
+              {/* <div className='L-conformation-price'>{option.price}</div> */}
             </div>
-
-
-            <div className='L-conformation-details'>
-
-                <h3 className='L-conformation-details-record'>Детали записи</h3>
-
-                <div className='L-conformation-records'>
-                    selected
-                </div>
-
-                <h3 className='L-conformation-details-record'>Итого <span className='L-conformation-price'>0000</span></h3>
-
-            </div>
+          ))}
+        </div>
+        <h3 className='L-conformation-details-record'>
+          Итого{''}
+          <span className='L-conformation-price'>{totalPrice.toLocaleString('ru-RU')} դր</span>
+        </h3>
+      </div>
 
             <div className='L-conformation-details'>
 
